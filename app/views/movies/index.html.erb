@@ -1,7 +1,8 @@
 <%= link_to "Add Movie", new_movie_path %>
-
+<div class="movie">
 <% @movies.each do |movie| %>
+    <br>
   <h1><%= movie.name %> (<%= movie.year %>)</h1>
   <p><%= movie.synopsis %></p>
-  <br>
 <% end %>
+  </div>

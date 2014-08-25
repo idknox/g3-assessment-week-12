@@ -6,24 +6,25 @@
           <%= error %>
         </div>
       <% end %>
+      <br>
     </li>
     <li>
       <%= f.label :name %>
     </li>
     <li>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: "name" %>
     </li>
     <li>
       <%= f.label :year %>
     </li>
     <li>
-      <%= f.text_field :year %>
+      <%= f.text_field :year, class: "year" %>
     </li>
     <li>
       <%= f.label :synopsis %>
     </li>
     <li>
-      <%= f.text_field :synopsis %>
+      <%= f.text_area :synopsis, rows: "4" %>
     </li>
     <li>
       <%= f.submit "Create Movie" %>

@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+    margin: 0;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.year {
+    width: 50px;
+}
+
+.name {
+    width: 100px;
+}
+
+.errors {
+    color: red;
+}
+
+.movie {
+    width: 500px;
+}
+
+p {
+    white-space: pre-wrap;
+}
