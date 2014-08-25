@@ -17,7 +17,7 @@ feature "Movies" do
     fill_in "Synopsis", :with => "lots of stuff"
     click_on "Create Movie"
 
-    expect(page).to have_content "The Wickerman 2006 lots of stuff"
+    expect(page).to have_content "The Wickerman (2006) lots of stuff"
   end
 
   scenario "fields must be filled and year must be number" do
@@ -27,6 +27,22 @@ feature "Movies" do
     click_on "Create Movie"
 
     expect(page).to have_content "Name can't be blank Year can't be blank Year is not a number"
+  end
 
+  scenario "Movies are ordered by year descending" do
+    visit "/"
+    click_on "Add Movie"
+    fill_in "Name", :with => "The Rock"
+    fill_in "Year", :with => "1996"
+    fill_in "Synopsis", :with => "more stuff"
+    click_on "Create Movie"
+
+    click_on "Add Movie"
+    fill_in "Name", :with => "The Wickerman"
+    fill_in "Year", :with => "2006"
+    fill_in "Synopsis", :with => "lots of stuff"
+    click_on "Create Movie"
+
+    expect(page).to have_content "The Wickerman (2006) lots of stuff The Rock (1996) more stuff"
   end
 end
