@@ -42,3 +42,7 @@ ul {
 p {
     white-space: pre-wrap;
 }
+
+.main {
+    margin-left: 10px;
+}
