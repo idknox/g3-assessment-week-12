@@ -8,8 +8,6 @@ class MoviesController < ApplicationController
   end
 
   def create
-    puts "*" * 80
-    puts params
     @movie = Movie.new(
       :name => params[:movie][:name],
       :year => params[:movie][:year],

@@ -1,12 +1,32 @@
-<%= form_for @movie do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :year %>
-  <%= f.text_field :year %>
-
-  <%= f.label :synopsis %>
-  <%= f.text_field :synopsis %>
-
-  <%= f.submit "Create Movie" %>
-<% end %>
+<ul>
+  <%= form_for @movie do |f| %>
+    <li>
+      <% f.object.errors.full_messages.each do |error| %>
+        <div class="errors">
+          <%= error %>
+        </div>
+      <% end %>
+    </li>
+    <li>
+      <%= f.label :name %>
+    </li>
+    <li>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :year %>
+    </li>
+    <li>
+      <%= f.text_field :year %>
+    </li>
+    <li>
+      <%= f.label :synopsis %>
+    </li>
+    <li>
+      <%= f.text_field :synopsis %>
+    </li>
+    <li>
+      <%= f.submit "Create Movie" %>
+    </li>
+  <% end %>
+</ul>

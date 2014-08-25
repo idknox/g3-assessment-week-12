@@ -19,4 +19,14 @@ feature "Movies" do
 
     expect(page).to have_content "The Wickerman 2006 lots of stuff"
   end
+
+  scenario "fields must be filled and year must be number" do
+    visit "/"
+    click_on "Add Movie"
+
+    click_on "Create Movie"
+
+    expect(page).to have_content "Name can't be blank Year can't be blank Year is not a number"
+
+  end
 end
