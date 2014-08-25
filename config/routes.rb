@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root "homepage#show"
+  root "movies#index"
+
+  resources :movies
 end
